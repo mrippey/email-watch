@@ -22,4 +22,8 @@ records and research.
 
 ## :clipboard: TODO:
 
-* Coming soon!!
+* Get certificate info (if applicable)
+* Find current as well as Passive DNS information
+* Screenshot subject domain (?)
+* Obtain domain reputation
+* Ingest emaill address and returned domains to ElasticSearch for further research
