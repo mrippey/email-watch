@@ -20,6 +20,6 @@ In addition to domains, Email-Watch will also attempt to find:
 Future versions of Email-Watch will include the ability to have all or some of the found domains ingested by ElasticSearch for 
 records and research. 
 
-## TODO:
+## :clipboard: TODO:
 
 * Coming soon!!
