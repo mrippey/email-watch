@@ -1,9 +1,11 @@
-import requests
-from secrets import APIKEY
 import json
+from options.certificate_info import show_cert_info
+from options.dns import get_dns_resolutions
 from prompt_toolkit import prompt
+import requests
 from rich import print
-
+from secrets import APIKEY
+import time
 
 base_url = "https://reverse-whois.whoisxmlapi.com/api/v2"
 headers = {"Content-Type": "application/json", "Accept": "application/json"}
@@ -49,6 +51,24 @@ def retrieve_whoisxml_results(response):
 
     for idx, domains in enumerate(only_return_domains):
         print(f"{idx}. {domains}")
+
+    print()
+
+    learn_more_about_domain = int(input('To learn more about a domain, pick a number from above: [/]'))
+    result_domain = only_return_domains[int(learn_more_about_domain)-1]
+    learn_more(learn_more_about_domain, result_domain)
+
+
+def learn_more(learn_more_about_domain, result_domain):
+    print(f'[bold magenta] [+] number {learn_more_about_domain}, {result_domain} was selected. Certificate and DNS info...[/]\n')
+
+    show_cert_info(result_domain)
+    print()
+    print(f'[magenta] [-] Gathering DNS resolution infomration for {result_domain}[/]\n')
+    time.sleep(2)
+    
+    get_dns_resolutions(result_domain)
+
 
 
 def menu():

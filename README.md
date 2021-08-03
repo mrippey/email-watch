@@ -22,8 +22,8 @@ records and research.
 
 ## :clipboard: TODO:
 
-* Get certificate info (if applicable)
-* Find current as well as Passive DNS information
+* :white_check_mark:  Get certificate info (if applicable)
+* :white_check_mark: Obtain Passive DNS information (using RiskIQ API)
 * Screenshot subject domain (?)
 * Obtain domain reputation
 * Ingest emaill address and returned domains to ElasticSearch for further research
