@@ -1,6 +1,6 @@
 import json
 from options.certificate_info import show_cert_info
-from options.dns import get_dns_resolutions
+from options import dns
 from prompt_toolkit import prompt
 import requests
 from rich import print
@@ -67,24 +67,24 @@ def learn_more(learn_more_about_domain, result_domain):
     print(f'[magenta] [-] Gathering DNS resolution infomration for {result_domain}[/]\n')
     time.sleep(2)
     
-    get_dns_resolutions(result_domain)
+    dns.get_dns_resolutions(result_domain)
 
 
 
 def menu():
     print(
-        """
+        """[purple]
   _____                _ _ _    _       _       _     
 |  ___|              (_) | |  | |     | |     | |    
 | |__ _ __ ___   __ _ _| | |  | | __ _| |_ ___| |__  
 |  __| '_ ` _ \ / _` | | | |/\| |/ _` | __/ __| '_ \ 
 | |__| | | | | | (_| | | \  /\  / (_| | || (__| | | |
 \____/_| |_| |_|\__,_|_|_|\/  \/ \__,_|\__\___|_| |_|
-v0.1.0
+v0.1.1
 Discover domains registered by specific email address
 Twitter: @nahamike01                                                   
                                                        
-    """
+    [/]"""
     )
 
 
